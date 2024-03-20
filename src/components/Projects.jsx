@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
-import { github, pineapple, pineappleHover } from "../assets";
+import { github, githubLock, pineapple, lock, pineappleHover } from "../assets";
 import { projects } from "../constants";
 import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 
@@ -54,7 +54,14 @@ const ProjectCard = ({
             className="absolute bottom-0 p-8 justify-start w-full 
             flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
           >
-            <div className="absolute inset-0 flex justify-end m-3">
+            <div
+              className="absolute inset-0 flex justify-end m-3"
+              title={
+                repo
+                  ? ""
+                  : "This project has ownership rights belonging to the owner company (Remocolla Ltd)."
+              }
+            >
               <div
                 onClick={() => window.open(repo, "_blank")}
                 className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
@@ -62,13 +69,12 @@ const ProjectCard = ({
                   sm:opacity-[0.9] opacity-[0.8]"
               >
                 <img
-                  src={github}
+                  src={repo ? github : githubLock}
                   alt="source code"
                   className="w-4/5 h-4/5 object-contain"
                 />
               </div>
             </div>
-
             <h2
               className="font-bold sm:text-[32px] text-[24px] 
               text-timberWolf uppercase font-beckman sm:mt-0 -mt-[1rem]"
@@ -83,6 +89,11 @@ const ProjectCard = ({
               {description}
             </p>
             <button
+              title={
+                demo
+                  ? ""
+                  : "This project has ownership rights belonging to the owner company (RemoColla Ltd)."
+              }
               className="live-demo flex justify-between 
               sm:text-[16px] text-[14px] text-timberWolf 
               font-bold font-beckman items-center py-5 pl-2 pr-3 
@@ -95,16 +106,16 @@ const ProjectCard = ({
               onMouseOver={() => {
                 document
                   .querySelector(".btn-icon")
-                  .setAttribute("src", pineappleHover);
+                  .setAttribute("src", demo ? pineapple : lock);
               }}
               onMouseOut={() => {
                 document
                   .querySelector(".btn-icon")
-                  .setAttribute("src", pineapple);
+                  .setAttribute("src", demo ? pineapple : lock);
               }}
             >
               <img
-                src={pineapple}
+                src={demo ? pineapple : lock}
                 alt="pineapple"
                 className="btn-icon sm:w-[34px] sm:h-[34px] 
                   w-[30px] h-[30px] object-contain"
@@ -119,7 +130,7 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
-  const [active, setActive] = useState("project-2");
+  const [active, setActive] = useState("project-3");
 
   return (
     <div className="-mt-[6rem]">

@@ -13,9 +13,11 @@ import ux from "./icons/ux.png";
 import frontend from "./icons/frontend.png";
 import prototyping from "./icons/prototyping.png";
 import github from "./icons/github.png";
+import githubLock from "./icons/github-lock.png";
 import close from "./icons/close.png";
 import download from "./icons/download.png";
 import downloadHover from "./icons/downloadHover.png";
+import lock from "./icons/lock.png";
 import pineapple from "./icons/pineapple.png";
 import pineappleHover from "./icons/pineappleHover.png";
 import menu from "./icons/menu.png";
@@ -45,12 +47,16 @@ import coverhunt from "./company/coverhunt.png";
 import dcc from "./company/dcc.png";
 import kelhel from "./company/kelhel.png";
 import microverse from "./company/microverse.png";
+import remocolla from "./company/remocolla.png";
+import acm from "./company/icpc-logo.png";
+import aleppoUniversity from "./company/aleppo.png";
+import yssrLogo from "./company/yssr-logo.png";
 
 import pigGame from "./projects/pigGame.png";
 import codersArena from "./projects/codersArena.png";
-import math from "./projects/math-magicians.png";
-import movie from "./projects/movie-metro.png";
-import nyeusi from "./projects/nyeusi.png";
+import yssr from "./projects/yssr.png";
+import gyoumu from "./projects/gyoumu.png";
+import kaitai from "./projects/kaitai.png";
 import space from "./projects/space-hub.png";
 
 export {
@@ -66,9 +72,11 @@ export {
   frontend,
   prototyping,
   github,
+  githubLock,
   close,
   download,
   downloadHover,
+  lock,
   pineapple,
   pineappleHover,
   menu,
@@ -92,12 +100,16 @@ export {
   typescript,
   pigGame,
   codersArena,
-  math,
-  movie,
-  nyeusi,
+  yssr,
+  gyoumu,
+  kaitai,
   space,
   coverhunt,
   dcc,
   kelhel,
   microverse,
+  remocolla,
+  acm,
+  aleppoUniversity,
+  yssrLogo,
 };

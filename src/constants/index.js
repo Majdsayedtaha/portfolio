@@ -20,10 +20,14 @@ import {
   graphql,
   pigGame,
   codersArena,
-  math,
-  movie,
-  nyeusi,
+  yssr,
+  gyoumu,
+  kaitai,
   space,
+  remocolla,
+  yssrLogo,
+  aleppoUniversity,
+  acm,
   coverhunt,
   dcc,
   kelhel,
@@ -125,38 +129,106 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Front-End Developer",
-    company_name: "Cover Hunt",
-    icon: coverhunt,
+    title: "Entry-level",
+    company_name: "Simple native web projects",
+    icon: aleppoUniversity,
     iconBg: "#333333",
-    date: "Aug 2021 - Feb 2022",
+    date: "Jan 2020 - Jan 2021",
   },
   {
-    title: "Mentor (Volunteer)",
-    company_name: "Microverse",
-    icon: microverse,
+    title: "Training Workshop",
+    company_name: "ICPC ACM",
+    icon: acm,
     iconBg: "#333333",
-    date: "Mar 2022 - May 2022",
+    date: "Jan 2022 - Mar 2022",
   },
   {
-    title: "Junior Software Engineer",
-    company_name: "Kelhel",
-    icon: kelhel,
+    title: "Software Engineer",
+    company_name: "RemoColla",
+    icon: remocolla,
     iconBg: "#333333",
-    date: "May 2022 - Oct 2022",
+    date: "Jan 2022 - Mar 2024",
   },
   {
-    title: "Full Stack Developer",
-    company_name: "Diversity Cyber Council",
-    icon: dcc,
+    title: "Front-end Developer",
+    company_name: "YSSR . Freelance project",
+    icon: yssrLogo,
     iconBg: "#333333",
-    date: "Sep 2022 - Present",
+    date: "April 2023 - April 2024",
   },
 ];
 
 const projects = [
   {
     id: "project-1",
+    name: "Gyoumu.Cloud",
+    description: `A huge Japanese platform providing tools for Business Management, Collaboration, Knowledge Management, and ITSM.`,
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: gyoumu,
+    repo: "",
+    demo: "",
+  },
+  {
+    id: "project-2",
+    name: "Kaitai",
+    description:
+      "With my expertise in software engineering and passion for automotive technology I developed a vehicle management system, streamlining operations and enhancing efficiency in vehicle management conforming to Japanese standards.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: kaitai,
+    repo: "",
+    demo: "",
+  },
+  {
+    id: "project-3",
+    name: "YSSR",
+    description:
+      "YSSR is a comprehensive platform that provides a wide range of services to customers looking to hire skilled labor. Including the financial section, detailed reports, and task management in the system",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: yssr,
+    repo: "https://github.com/Majdsayedtaha/yssr.git",
+    demo: "https://8264-58682.el-alt.com",
+  },
+  {
+    id: "project-4",
     name: "Pig Game",
     description:
       "A turn-based game where players roll a die to accumulate points.",
@@ -179,7 +251,7 @@ const projects = [
     demo: "https://majdsayedtaha.github.io/pig_game/",
   },
   {
-    id: "project-2",
+    id: "project-5",
     name: "Coders Arena",
     description:
       "Dive into a world of stunning visuals crafted with pure CSS! Explore layouts, animations, and interactive elements that bring your styling skills to life.",
@@ -200,73 +272,6 @@ const projects = [
     image: codersArena,
     repo: "https://github.com/Majdsayedtaha/Coders-Arena",
     demo: "https://majdsayedtaha.github.io/Coders-Arena/",
-  },
-  {
-    id: "project-3",
-    name: "Math Magicians",
-    description: "This is a single-page calculator app built with React",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: math,
-    repo: "https://github.com/shaqdeff/Math-Magicians",
-    demo: "https://inspiring-medovik-37d3b3.netlify.app/",
-  },
-  {
-    id: "project-4",
-    name: "Movie Metro",
-    description: `A single-page application that allows users to search for any movie or show's ratings and its details.`,
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: movie,
-    repo: "https://github.com/shaqdeff/Movie-Metro",
-    demo: "https://movie-metro.netlify.app/",
-  },
-  {
-    id: "project-5",
-    name: "Nyeusi Fest Site",
-    description:
-      "This is a demo concert website for a music festival called Nyeusi.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: nyeusi,
-    repo: "https://github.com/shaqdeff/Nyeusi-Fest-Site",
-    demo: "https://shaqdeff.github.io/Nyeusi-Fest-Site/",
   },
 ];
 
