@@ -52,19 +52,19 @@
 }
 
 #about {
-  margin-left: -24px;
-  font-size: 100px;
+  /* margin-left: 0px; */
+  font-size: 70px;
 }
 
 #projects {
-  margin-left: -2px;
-  font-size: 100px;
+  /* margin-left: -2px; */
+  font-size: 70px;
 }
 
 #contact {
-  margin-left: -20px;
-  font-size: 95px;
-  letter-spacing: -2px;
+  /* margin-left: -20px; */
+  font-size: 70px;
+  /* letter-spacing: -2px; */
 }
 
 .hero-heading {
