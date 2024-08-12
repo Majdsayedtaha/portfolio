@@ -55,6 +55,7 @@ import yssrLogo from "./company/yssr-logo.png";
 import pigGame from "./projects/pigGame.png";
 import codersArena from "./projects/codersArena.png";
 import yssr from "./projects/yssr.png";
+import ruknAlhilal from "./projects/ruknAlhilal.png";
 import gyoumu from "./projects/gyoumu.png";
 import kaitai from "./projects/kaitai.png";
 import space from "./projects/space-hub.png";
@@ -101,6 +102,7 @@ export {
   pigGame,
   codersArena,
   yssr,
+  ruknAlhilal,
   gyoumu,
   kaitai,
   space,

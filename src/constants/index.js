@@ -21,6 +21,7 @@ import {
   pigGame,
   codersArena,
   yssr,
+  ruknAlhilal,
   gyoumu,
   kaitai,
   space,
@@ -161,8 +162,8 @@ const experiences = [
 const projects = [
   {
     id: "project-1",
-    name: "Gyoumu.Cloud",
-    description: `A huge Japanese platform providing tools for Business Management, Collaboration, Knowledge Management, and ITSM.`,
+    name: "Gyoumu Cloud",
+    description: `A huge Japanese platform providing tools for Business Management, ITSM, and more.`,
     tags: [
       {
         name: "nextjs",
@@ -185,7 +186,7 @@ const projects = [
     id: "project-2",
     name: "Kaitai",
     description:
-      "With my expertise in software engineering and passion for automotive technology I developed a vehicle management system, streamlining operations and enhancing efficiency in vehicle management conforming to Japanese standards.",
+      "Vehicle management system, streamlining operations conforming to Japanese standards.",
     tags: [
       {
         name: "nextjs",
@@ -208,7 +209,7 @@ const projects = [
     id: "project-3",
     name: "YSSR",
     description:
-      "YSSR is a comprehensive platform that provides a wide range of services to customers looking to hire skilled labor. Including the financial section, detailed reports, and task management in the system",
+      "YSSR is a CRM platform provides services to manage all thing related to customers & labors.",
     tags: [
       {
         name: "nextjs",
@@ -229,6 +230,28 @@ const projects = [
   },
   {
     id: "project-4",
+    name: "Rukn Alhilal",
+    description: "Ruken Al Hilal is a UAE-based offering cleaning services.",
+    tags: [
+      {
+        name: "ًWordPress",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mysql",
+        color: "green-text-gradient",
+      },
+      {
+        name: "php",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ruknAlhilal,
+    repo: "",
+    demo: "https://rukenalhilal.com",
+  },
+  {
+    id: "project-5",
     name: "Pig Game",
     description:
       "A turn-based game where players roll a die to accumulate points.",
@@ -251,10 +274,9 @@ const projects = [
     demo: "https://majdsayedtaha.github.io/pig_game/",
   },
   {
-    id: "project-5",
+    id: "project-6",
     name: "Coders Arena",
-    description:
-      "Dive into a world of stunning visuals crafted with pure CSS! Explore layouts, animations, and interactive elements that bring your styling skills to life.",
+    description: "Dive into a world of stunning visuals crafted with pure CSS!",
     tags: [
       {
         name: "react",

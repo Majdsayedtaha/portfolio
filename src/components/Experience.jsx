@@ -63,6 +63,19 @@ const Experience = () => {
         <h2 className={`${styles.sectionHeadText} sm:pl-16 pl-[2rem]`}>
           Work Experience.
         </h2>
+        <h5 className="sm:pl-16 pl-[2rem]">
+          <a
+            rel="noreferrer"
+            target="_blank"
+            style={{ color: "black" }}
+            href="https://drive.google.com/file/d/17z9-6JCWC-RvPZTzKy49O6Wzobe6zMjk/view?usp=sharing"
+          >
+            <u>
+              <strong>RemoColla Ltd </strong>
+              Work Experience Letter.
+            </u>
+          </a>
+        </h5>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
