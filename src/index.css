@@ -105,6 +105,7 @@
   box-shadow: rgba(155, 155, 155, 0.3) 0 2px 6px,
     rgba(155, 155, 155, 0.22) 0 0 4px;
   border-radius: 24px;
+  overflow: hidden;
 }
 
 .black-gradient {
