@@ -72,6 +72,7 @@ const Hero = () => {
             border-french border-dim flex
             justify-center items-start p-2"
             >
+              
               <motion.div
                 animate={{
                   y: [0, 24, 0],
