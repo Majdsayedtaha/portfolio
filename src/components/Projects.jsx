@@ -6,15 +6,7 @@ import { github, githubLock, pineapple, lock } from "../assets";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
-  id,
-  name,
-  description,
-  image,
-  repo,
-  demo,
-  index,
-}) => {
+const ProjectCard = ({ id, name, description, image, repo, demo, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -106,11 +98,8 @@ const ProjectCard = ({
 
 const Projects = () => {
   return (
-    <div className="w-full flex flex-col items-center -mt-[4rem] sm:-mt-[6rem]">
-      <motion.div 
-        variants={textVariant()}
-        className="w-full px-4 sm:px-8"
-      >
+    <div className="w-full flex flex-col items-center">
+      <motion.div variants={textVariant()} className="w-full px-4 sm:px-8">
         <p className={`${styles.sectionSubText}`}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Projects.</h2>
       </motion.div>
@@ -133,11 +122,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 auto-rows-max">
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              index={index}
-              {...project}
-            />
+            <ProjectCard key={project.id} index={index} {...project} />
           ))}
         </div>
       </div>

@@ -39,7 +39,7 @@ const Contact = () => {
           to_email: "majdst81@gmail.com", //put your email here.
           message: form.message,
         },
-        "-Gds4sn2H3LMG0z1i" //paste your Public Key here. You'll get it in your profile section.
+        "-Gds4sn2H3LMG0z1i", //paste your Public Key here. You'll get it in your profile section.
       )
       .then(
         () => {
@@ -56,13 +56,13 @@ const Contact = () => {
           setLoading(false);
           console.log(error);
           alert("Something went wrong. Please try again.");
-        }
+        },
       );
   };
 
   return (
     <div
-      className="-mt-[8rem] xl:flex-row flex-col-reverse 
+      className="xl:flex-row flex-col-reverse 
       flex gap-10 overflow-hidden"
     >
       <motion.div
@@ -121,13 +121,7 @@ const Contact = () => {
               border-none font-medium resize-none"
             />
           </label>
-          <div
-            style={{
-              display: "flex",
-              "justify-content": "space-between",
-              "align-items": "center",
-            }}
-          >
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <button
               disabled={form.message.trim() === "" || form.email.trim() === ""}
               type="submit"
@@ -157,23 +151,12 @@ const Contact = () => {
               w-[23px] h-[23px] object-contain"
               />
             </button>
-            <div
-              style={{
-                display: "flex",
-                gap: "0.5rem",
-              }}
-            >
+            <div className="flex flex-wrap items-center gap-2 sm:justify-end">
               <a
                 href="https://wa.me/+971547280670"
                 target="_blank"
                 rel="noreferrer"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
               >
                 <svg
                   className="w-5 h-5"
@@ -191,13 +174,7 @@ const Contact = () => {
                 href="https://github.com/Majdsayedtaha"
                 target="_blank"
                 rel="noreferrer"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
               >
                 <svg
                   className="w-5 h-5"
@@ -216,13 +193,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/majd-sayed-taha"
                 rel="noreferrer"
                 target="_blank"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
               >
                 <svg
                   className="w-5 h-5"
@@ -238,13 +209,7 @@ const Contact = () => {
               </a>
               <a
                 href="tel:+971547280670"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
               >
                 <svg
                   className="w-5 h-5"
@@ -264,13 +229,7 @@ const Contact = () => {
                 href="https://www.youtube.com/@majdst_codes"
                 target="_blank"
                 rel="noreferrer"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
                 title="YouTube"
               >
                 <svg
@@ -285,13 +244,7 @@ const Contact = () => {
                 href="https://www.tiktok.com/@majdst_codes"
                 target="_blank"
                 rel="noreferrer"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
                 title="TikTok"
               >
                 <svg
@@ -306,13 +259,7 @@ const Contact = () => {
                 href="https://www.instagram.com/majdst_codes"
                 target="_blank"
                 rel="noreferrer"
-                className="live-demo flex justify-center text-timberWolf 
-            font-bold font-beckman items-center
-            whitespace-nowrap 
-             rounded-[10px] bg-night 
-            hover:bg-battleGray hover:text-eerieBlack 
-            transition duration-[0.2s] ease-in-out"
-                style={{ height: "30px", width: "30px" }}
+                className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
                 title="Instagram"
               >
                 <svg

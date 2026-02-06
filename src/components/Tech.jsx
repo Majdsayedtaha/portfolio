@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { motion } from "framer-motion";
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -5,13 +6,42 @@ import { technologies } from "../constants";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.log("Canvas Error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-gray-800 rounded-full p-3">
+          <img
+            src={this.props.fallbackIcon}
+            alt="tech icon"
+            className="w-full h-full object-contain"
+            loading="lazy"
+          />
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 const Tech = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <motion.div 
-        variants={textVariant()}
-        className="w-full px-4 sm:px-8"
-      >
+      <motion.div variants={textVariant()} className="w-full px-4 sm:px-8">
         <p className={`${styles.sectionSubTextLight}`}>My skills</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Technologies.</h2>
       </motion.div>
@@ -24,7 +54,9 @@ const Tech = () => {
               key={technology.name}
               title={technology.name}
             >
-              <BallCanvas icon={technology.icon} />
+              <ErrorBoundary fallbackIcon={technology.icon}>
+                <BallCanvas icon={technology.icon} />
+              </ErrorBoundary>
             </div>
           ))}
         </div>
