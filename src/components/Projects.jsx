@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
-import { github, githubLock, pineapple, lock, pineappleHover } from "../assets";
+import { github, githubLock, pineapple, lock } from "../assets";
 import { projects } from "../constants";
-import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
   id,
@@ -14,167 +14,128 @@ const ProjectCard = ({
   repo,
   demo,
   index,
-  active,
-  handleClick,
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className={`relative ${
-        active === id ? "lg:flex-[3.5] flex-[10]" : "lg:flex-[0.5] flex-[2]"
-      } flex items-center justify-center min-w-[170px] 
-      h-[420px] cursor-pointer card-shadow`}
-      onClick={() => handleClick(id)}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="relative h-[280px] sm:h-[350px] rounded-[24px] overflow-hidden group cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div
-        className="absolute top-0 left-0 z-10 bg-jetLight 
-      h-full w-full opacity-[0.5] rounded-[24px]"
-      ></div>
-
+      {/* Background Image */}
       <img
         src={image}
         alt={name}
-        className="absolute w-full h-full object-cover rounded-[24px]"
+        className="absolute w-full h-full object-cover"
+        loading="lazy"
       />
 
-      {active !== id ? (
-        <div className="flex items-center justify-start pr-[4.5rem]">
-          <h3
-            className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
-        whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]
-        absolute z-0 lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
-        leading-none z-20"
-          >
-            {name}
-          </h3>
-        </div>
-      ) : (
-        <>
-          <div
-            className="absolute bottom-0 p-8 justify-start w-full 
-            flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20"
-          >
-            {repo && (
-              <div
-                className="absolute inset-0 flex justify-end m-3"
-                title={
-                  repo
-                    ? ""
-                    : "This project has ownership rights belonging to the owner company (RemoColla Ltd). I can book a demo for you or show you the work experience letter from CEO of RemoColla Ltd."
-                }
-              >
-                <div
-                  onClick={() => window.open(repo, "_blank")}
-                  className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
-              flex justify-center items-center cursor-pointer
-              sm:opacity-[0.9] opacity-[0.8]"
-                >
-                  <img
-                    src={repo ? github : githubLock}
-                    alt="source code"
-                    className="w-4/5 h-4/5 object-contain"
-                  />
-                </div>
-              </div>
-            )}
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
 
-            <h2
-              className="font-bold sm:text-[32px] text-[24px] 
-              text-timberWolf uppercase font-beckman sm:mt-0 -mt-[1rem]"
-            >
-              {name}
-            </h2>
-            <p
-              className="text-silver sm:text-[14px] text-[12px] 
-              max-w-3xl sm:leading-[24px] leading-[18px]
-              font-poppins tracking-[1px]"
-            >
+      {/* Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0.7, y: 20 }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end"
+      >
+        <h3 className="text-timberWolf font-bold font-beckman text-xl sm:text-2xl mb-2 uppercase">
+          {name}
+        </h3>
+
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="space-y-3 mb-4"
+          >
+            <p className="text-silver text-xs sm:text-sm leading-relaxed font-poppins line-clamp-3">
               {description}
             </p>
-            <button
-              disabled={!demo}
-              title={
-                demo
-                  ? ""
-                  : "This project has ownership rights belonging to the owner company (RemoColla Ltd). I can book a demo for you or show you the work experience letter from CEO of RemoColla Ltd."
-              }
-              className="live-demo flex justify-between 
-              sm:text-[16px] text-[14px] text-timberWolf 
-              font-bold font-beckman items-center py-5 pl-2 pr-3 
-              whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px] 
-              w-[125px] h-[46px] rounded-[10px] glassmorphism 
-              sm:mt-[22px] mt-[16px] hover:bg-battleGray 
-              hover:text-eerieBlack transition duration-[0.2s] 
-              ease-in-out"
-              onClick={() => window.open(demo, "_blank")}
-              onMouseOver={() => {
-                document
-                  .querySelector(".btn-icon")
-                  .setAttribute("src", demo ? pineapple : lock);
-              }}
-              onMouseOut={() => {
-                document
-                  .querySelector(".btn-icon")
-                  .setAttribute("src", demo ? pineapple : lock);
-              }}
-            >
-              <img
-                src={demo ? pineapple : lock}
-                alt="pineapple"
-                className="btn-icon sm:w-[34px] sm:h-[34px] 
-                  w-[30px] h-[30px] object-contain"
-              />
-              LIVE DEMO
-            </button>
-          </div>
-        </>
-      )}
+
+            {/* Action Buttons */}
+            <div className="flex gap-3 pt-2">
+              {repo && (
+                <motion.a
+                  href={repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 
+                  rounded-full bg-night hover:bg-battleGray transition-colors"
+                  title="View source code"
+                >
+                  <img
+                    src={github}
+                    alt="GitHub"
+                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                    loading="lazy"
+                  />
+                </motion.a>
+              )}
+
+              {demo && (
+                <motion.a
+                  href={demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center justify-center px-3 sm:px-4 py-2 
+                  bg-timberWolf text-jet font-bold font-beckman text-xs sm:text-sm 
+                  rounded-lg hover:bg-battleGray transition-colors"
+                >
+                  LIVE DEMO →
+                </motion.a>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </motion.div>
     </motion.div>
   );
 };
 
 const Projects = () => {
-  const [active, setActive] = useState("project-3");
-
   return (
     <div className="-mt-[6rem]">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>Case Studies</p>
+        <p className={`${styles.sectionSubText}`}>Case Studies</p>
         <h2 className={`${styles.sectionHeadTextLight}`}>Projects.</h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]"
-        >
-          These projects demonstrate my expertise with practical examples of
-          some of my work, including brief descriptions and links to code
-          repositories and live demos. They showcase my ability to tackle
-          intricate challenges, adapt to various technologies, and efficiently
-          oversee projects.
-        </motion.p>
-      </div>
-
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col`}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="mt-4 text-taupe text-[16px] sm:text-[18px] max-w-3xl leading-[28px] sm:leading-[30px]"
       >
-        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              index={index}
-              {...project}
-              active={active}
-              handleClick={setActive}
-            />
-          ))}
-        </div>
-      </motion.div>
+        These projects demonstrate my expertise with practical examples of
+        some of my work, including brief descriptions and links to code
+        repositories and live demos. They showcase my ability to tackle
+        intricate challenges, adapt to various technologies, and efficiently
+        oversee projects.
+      </motion.p>
+
+      {/* Projects Grid */}
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            index={index}
+            {...project}
+          />
+        ))}
+      </div>
     </div>
   );
 };

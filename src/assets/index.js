@@ -32,16 +32,16 @@ import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import nodejs from "./tech/nodejs.png";
-// import reactjs from './tech/reactjs.png';
 import angularjs from "./tech/angular_whiteTransparent.png";
-// import redux from './tech/redux.png';
 import ngrx from "./tech/ngrx-logo-white.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import graphql from "./tech/graphql.png";
 import bootstrap from "./tech/bootstrap.png";
-import nestjs from "./tech/Nest-JSNode-JS.png";
 import material from "./tech/material.png";
+
+const csharp = new URL("./tech/c%23.png", import.meta.url).href;
+const dotnet = new URL("./tech/dotnet.png", import.meta.url).href;
 
 import coverhunt from "./company/coverhunt.png";
 import dcc from "./company/dcc.png";
@@ -51,6 +51,7 @@ import remocolla from "./company/remocolla.png";
 import acm from "./company/icpc-logo.png";
 import aleppoUniversity from "./company/aleppo.png";
 import yssrLogo from "./company/yssr-logo.png";
+import smartWorks from "./company/smart_works.png";
 
 import pigGame from "./projects/pigGame.png";
 import codersArena from "./projects/codersArena.png";
@@ -93,12 +94,13 @@ export {
   javascript,
   nodejs,
   bootstrap,
-  nestjs,
   material,
   angularjs,
   ngrx,
   tailwind,
   typescript,
+  csharp,
+  dotnet,
   pigGame,
   codersArena,
   yssr,
@@ -114,4 +116,5 @@ export {
   acm,
   aleppoUniversity,
   yssrLogo,
+  smartWorks,
 };

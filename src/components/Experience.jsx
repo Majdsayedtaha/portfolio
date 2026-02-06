@@ -35,6 +35,7 @@ const ExperienceCard = ({ experience }) => (
           src={experience.icon}
           alt={experience.company_name}
           className="w-[60%] h-[60%] object-contain"
+          loading="lazy"
         />
       </div>
     }
@@ -49,6 +50,15 @@ const ExperienceCard = ({ experience }) => (
       >
         {experience.company_name}
       </p>
+      {experience.description && (
+        <ul className="mt-4 list-disc list-inside space-y-2">
+          {experience.description.map((desc, index) => (
+            <li key={index} className="text-dim text-[14px] leading-[22px]">
+              {desc}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   </VerticalTimelineElement>
 );
@@ -63,7 +73,7 @@ const Experience = () => {
         <h2 className={`${styles.sectionHeadText} sm:pl-16 pl-[2rem]`}>
           Work Experience.
         </h2>
-        <h5 className="sm:pl-16 pl-[2rem]">
+        <h5 className="sm:pl-16 pl-[2rem] mt-4">
           <a
             rel="noreferrer"
             target="_blank"
@@ -103,6 +113,7 @@ const Experience = () => {
                   src={resume}
                   alt="resume"
                   className="w-[45%] h-[45%] object-contain"
+                  loading="lazy"
                 />
               </div>
             }
@@ -118,19 +129,19 @@ const Experience = () => {
               ease-in-out"
               onClick={() =>
                 window.open(
-                  "https://docs.google.com/document/d/1iSgu9dra5oR_CveMCZwlI9jbjtGXJWRMBHDNvknZZDw", //paste the link to your resume here
+                  "https://docs.google.com/document/d/1HooWuRYBWYATW63vDrzYsr0gWNUWyRM325gGMsWEyI4/edit?usp=sharing",
                   "_blank"
                 )
               }
               onMouseOver={() => {
                 document
                   .querySelector(".download-btn")
-                  .setAttribute("src", downloadHover);
+                  ?.setAttribute("src", downloadHover);
               }}
               onMouseOut={() => {
                 document
                   .querySelector(".download-btn")
-                  .setAttribute("src", download);
+                  ?.setAttribute("src", download);
               }}
             >
               MY RESUME
@@ -139,6 +150,7 @@ const Experience = () => {
                 alt="download"
                 className="download-btn sm:w-[26px] sm:h-[26px] 
                 w-[23px] h-[23px] object-contain"
+                loading="lazy"
               />
             </button>
           </VerticalTimelineElement>
