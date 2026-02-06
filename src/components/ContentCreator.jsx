@@ -82,7 +82,7 @@ const ContentCreator = () => {
     <div className="relative z-10">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Content & Community</p>
-        <h2 className={styles.sectionHeadText}>Content Creator.</h2>
+        <h2 className={styles.sectionHeadTextLight}>Content Creator.</h2>
       </motion.div>
 
       <motion.p

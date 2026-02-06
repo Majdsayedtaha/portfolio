@@ -7,24 +7,29 @@ import { textVariant } from "../utils/motion";
 
 const Tech = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubTextLight}>My skills</p>
-        <h2 className={styles.sectionHeadTextLight}>Technologies.</h2>
+    <div className="w-full flex flex-col items-center justify-center">
+      <motion.div 
+        variants={textVariant()}
+        className="w-full px-4 sm:px-8"
+      >
+        <p className={`${styles.sectionSubTextLight}`}>My skills</p>
+        <h2 className={`${styles.sectionHeadTextLight}`}>Technologies.</h2>
       </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-10 mt-14">
-        {technologies.map((technology) => (
-          <div
-            className="w-20 h-20 sm:w-28 sm:h-28"
-            key={technology.name}
-            title={technology.name}
-          >
-            <BallCanvas icon={technology.icon} />
-          </div>
-        ))}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 md:gap-6 mt-10 sm:mt-14 justify-items-center">
+          {technologies.map((technology) => (
+            <div
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center"
+              key={technology.name}
+              title={technology.name}
+            >
+              <BallCanvas icon={technology.icon} />
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
