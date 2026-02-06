@@ -40,7 +40,7 @@ import graphql from "./tech/graphql.png";
 import bootstrap from "./tech/bootstrap.png";
 import material from "./tech/material.png";
 
-const csharp = new URL("./tech/c%23.png", import.meta.url).href;
+import csharp from "./tech/csharp.png";
 const dotnet = new URL("./tech/dotnet.png", import.meta.url).href;
 
 import coverhunt from "./company/coverhunt.png";
