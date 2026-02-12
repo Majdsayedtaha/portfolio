@@ -49,16 +49,16 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "work",
-    title: "Experience",
-  },
-  {
     id: "projects",
     title: "Projects",
   },
   {
     id: "content",
     title: "Content",
+  },
+  {
+    id: "work",
+    title: "Experience",
   },
   {
     id: "contact",
@@ -344,7 +344,7 @@ const projects = [
       },
     ],
     image: yssr,
-    repo: "https://github.com/Majdsayedtaha/yssr.git",
+    repo: "https://github.com/EngMajdSayedTaha/yssr.git",
     demo: "https://8264-58682.el-alt.com",
   },
   {
@@ -390,7 +390,7 @@ const projects = [
       },
     ],
     image: pigGame,
-    repo: "https://github.com/Majdsayedtaha/pig_game",
+    repo: "https://github.com/EngMajdSayedTaha/pig_game",
     demo: "https://majdsayedtaha.github.io/pig_game/",
   },
   {
@@ -413,7 +413,7 @@ const projects = [
       },
     ],
     image: codersArena,
-    repo: "https://github.com/Majdsayedtaha/Coders-Arena",
+    repo: "https://github.com/EngMajdSayedTaha/Coders-Arena",
     demo: "https://majdsayedtaha.github.io/Coders-Arena/",
   },
 ];
