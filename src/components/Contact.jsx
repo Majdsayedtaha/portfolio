@@ -171,7 +171,7 @@ const Contact = () => {
                 </svg>
               </a>
               <a
-                href="https://github.com/Majdsayedtaha"
+                href="https://github.com/EngMajdSayedTaha"
                 target="_blank"
                 rel="noreferrer"
                 className="live-demo flex h-8 w-8 items-center justify-center rounded-[10px] bg-night text-timberWolf transition duration-[0.2s] ease-in-out hover:bg-battleGray hover:text-eerieBlack sm:h-9 sm:w-9"
