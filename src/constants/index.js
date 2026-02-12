@@ -391,7 +391,7 @@ const projects = [
     ],
     image: pigGame,
     repo: "https://github.com/EngMajdSayedTaha/pig_game",
-    demo: "https://majdsayedtaha.github.io/pig_game/",
+    demo: "https://engmajdsayedtaha.github.io/pig_game/",
   },
   {
     id: "project-9",
@@ -414,7 +414,7 @@ const projects = [
     ],
     image: codersArena,
     repo: "https://github.com/EngMajdSayedTaha/Coders-Arena",
-    demo: "https://majdsayedtaha.github.io/Coders-Arena/",
+    demo: "https://engmajdsayedtaha.github.io/Coders-Arena/",
   },
 ];
 
