@@ -344,7 +344,7 @@ const projects = [
       },
     ],
     image: yssr,
-    repo: "https://github.com/EngMajdSayedTaha/yssr.git",
+    repo: "https://github.com/Majdsayedtaha/yssr.git",
     demo: "https://8264-58682.el-alt.com",
   },
   {
@@ -390,8 +390,8 @@ const projects = [
       },
     ],
     image: pigGame,
-    repo: "https://github.com/EngMajdSayedTaha/pig_game",
-    demo: "https://engmajdsayedtaha.github.io/pig_game/",
+    repo: "https://github.com/Majdsayedtaha/pig_game",
+    demo: "https://Majdsayedtaha.github.io/pig_game/",
   },
   {
     id: "project-9",
@@ -413,8 +413,8 @@ const projects = [
       },
     ],
     image: codersArena,
-    repo: "https://github.com/EngMajdSayedTaha/Coders-Arena",
-    demo: "https://engmajdsayedtaha.github.io/Coders-Arena/",
+    repo: "https://github.com/Majdsayedtaha/Coders-Arena",
+    demo: "https://Majdsayedtaha.github.io/Coders-Arena/",
   },
 ];
 
